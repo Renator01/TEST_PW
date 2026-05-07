@@ -1,0 +1,13 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('Example.com', () => {
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://example.com/');
+  });
+
+  test('should display correct page title', async ({ page }) => {
+    await expect(page).toHaveTitle(/Example Domain/);
+  });
+
+});
