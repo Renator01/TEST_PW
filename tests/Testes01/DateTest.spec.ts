@@ -5,7 +5,7 @@ test('Assert in playwright', async ({page}) => {
     
     // Assert url 
     await expect(page).toHaveURL('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select');
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(1000);
 
    
   
