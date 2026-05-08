@@ -10,7 +10,7 @@ test('test click @Smoke', async ({ page }) => {
   await page.getByPlaceholder('Search').click();
   await page.getByPlaceholder('Search').fill('playwright');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
  
 });
 
