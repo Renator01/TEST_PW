@@ -48,6 +48,17 @@ test.describe('Sauce Demo - cenarios extras', () => {
 
     expect(names).toEqual(sortedNames);
   });
+  
+
+   test('ordena produtos de A para Z', async ({ page }) => {
+
+    await login(page);
+    await page.locator('[data-test="product-sort-container"]').selectOption('az');
+    
+    const names = await page.locator('[data-test="inventory-item-name"]').allTextContents();
+    const sortedNames = [...names].sort((a, b) => a.localeCompare(b));
+    
+  });
 
   test('remove produto do carrinho e atualiza o contador', async ({ page }) => {
     await login(page);
