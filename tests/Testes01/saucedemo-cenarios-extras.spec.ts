@@ -9,6 +9,11 @@ async function login(page: Page, username = 'standard_user', password = 'secret_
   await page.locator('[data-test="login-button"]').click();
 }
 
+test('teste de exemplo para validar o ambiente', async ({ page }) => {
+  await page.goto(baseUrl);
+  await expect(page.locator('[data-test="login-button"]')).toBeVisible();
+});
+
 test.describe('Sauce Demo - cenarios extras', () => {
   test('nao permite login com senha invalida', async ({ page }) => {
     await login(page, 'standard_user', 'senha_errada');
@@ -111,3 +116,4 @@ test.describe('Sauce Demo - cenarios extras', () => {
     await expect(page.getByText('Sauce Labs Backpack')).toBeVisible();
   });
 });
+
