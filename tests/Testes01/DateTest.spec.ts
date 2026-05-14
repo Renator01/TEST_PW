@@ -26,7 +26,7 @@ test('Assert in playwright', async ({page}) => {
     const optionCount = await page.frameLocator('#iframeResult').locator('select option').count();
     expect(optionCount).toBe(4);
 
- 
+ await page.waitForTimeout(2000);
 
 
     
